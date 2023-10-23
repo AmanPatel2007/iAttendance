@@ -13,7 +13,6 @@ python camera_flask_app.py
 
 --Please read my medium blog post for detailed explanation: [Camera App with Flask and OpenCV](https://naghemanth.medium.com/camera-app-with-flask-and-opencv-bd147f6c0eec?source=friends_link&sk=705255bd58cf139ad95ab2149806d8c6).
 
-## Demo:
-![alt text](saved_model/demo.gif)
+
 
 
