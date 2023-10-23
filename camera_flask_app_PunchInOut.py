@@ -19,7 +19,7 @@ images = []
 class_names = []
 encode_list = []
 
-cascade_filepath = path.abspath('D:/Python Projects/Aman Projects/Data/haarcascade_frontalface_default.xml')
+cascade_filepath = path.abspath('Data/haarcascade_frontalface_alt.xml')
 classifier = cv2.CascadeClassifier(cascade_filepath)
 
 
@@ -40,7 +40,7 @@ app = Flask(__name__, template_folder='./templates')
 camera = cv2.VideoCapture(0)
 
 
-path = 'D:/Python Projects/Camera_Flask_App-main/images'
+path = 'Images'
 attendance_list = os.listdir(path)
 
 # print(attendance_list)
@@ -143,7 +143,7 @@ def CheckInEntry(checkindata):
     
     global conn
     
-    conn = sqlite3.connect("D:/Python Projects/Camera_Flask_App-main/Database/DBEntry.db")
+    conn = sqlite3.connect("Database/DBEntry.db")
     
     
     sql = ''' INSERT INTO tblTimesheet(Name,CheckInTime,CheckOutTime, TotalTime)
@@ -161,7 +161,7 @@ def CheckOutEntry(checkouttime):
     
     totalTime = ""
     
-    conn = sqlite3.connect("D:/Python Projects/Camera_Flask_App-main/Database/DBEntry.db")
+    conn = sqlite3.connect("Database/DBEntry.db")
     
     #UPDATE tblTimesheet SET checkouttime = ? WHERE Name = name;
     
