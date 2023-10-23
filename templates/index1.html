@@ -1,0 +1,119 @@
+<head>
+    <style>
+          .txtstyle {
+              font-size:16px;
+              font-family:verdana;
+              color:white;
+          }
+          
+          
+          .button {
+              background-color: #504D9F;
+              border: 1px;
+              color: white;
+              padding: 20px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              font-family:verdana;
+              margin: 4px 2px;
+              border-radius: 8px;
+              width: 150px;
+            
+            }
+            
+            .table {                
+                text-align: center;
+                text-decoration: none;
+                color : white;
+                font-size: 16px;
+                font-family:verdana;
+                width : 500px;
+                border-width:1px;
+            }
+            
+            .img
+            {
+               
+                
+                
+            }
+            .mt-5
+            {
+                color:white;
+            }
+    </style>
+</head>
+
+
+<body style="font-family:verdana;background:url('{{ url_for('static', filename='/Images/blue.png') }}'); color:white >
+
+<div class="container" align="center">
+
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2" style="color:white">
+
+			
+            <h1 class="mt-5">iAttendance</h1>
+                       
+            
+            <img class="img" src="{{ url_for('video_feed') }}" >
+            
+            <br/><br/>	
+            
+			<form method="post" action="{{ url_for('tasks') }}">
+			
+                <div style="font-size:16px;display: inline-block; text-align: center; width:500px; color:white">    
+        		
+        			<b>Name : </b><label id="lblname" class="txtstyle" for="Name">{{INPUT_NAME_1}}</label><br/><br/>
+        		
+        			<table class="table">
+            			<tr>
+                			<td width="50%"> 
+                    			Check In 
+                    			<br/>
+                    			<label id="lblcheckin" class="txtstyle"  for="Check In">{{CHKIN_TIME}}</label> 
+                			</td>
+                			<td>
+                    			<img src="{{ url_for('static', filename='Images/whiteline.jpeg') }}" /> 
+                    		</td>
+                			<td> Check Out 
+                    			<br/>
+                    			<label id="lblcheckout" class="txtstyle" for="Check Out">{{CHKOUT_TIME}}</label>
+                			</td>
+                		</tr>                		
+                		<tr>
+                			<td> </td>
+                			<td> </td>
+                		</tr>
+        			</table>
+        			 
+        				
+            		<br/><br/>
+            		Total Time : <label id="lblTotalTime" class="txtstyle" for="Total Time">{{TOT_TIME}}</label><br/>
+            		
+        			<br/>
+     
+         			<input class="button" type="submit" value="Check In" name="checkin" /> 
+         			<input class="button" type="submit" value="Check Out" name="checkout" />
+         		
+         			
+     	
+    			</div>    		
+			
+			<h3 style="font-family:courier;">Instructions:</h3>
+				
+					
+			<div style="display: inline-block; text-align: left;color:white">    			
+    			<li>Check In - Records the name and check in time</li> 
+    			<li>Check Out - Records the name and check out time</li> 
+    		
+    		</div>
+				
+			</form>
+            
+        </div>
+    </div>
+</div>
+</body>

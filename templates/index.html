@@ -1,0 +1,54 @@
+<head>
+    <style>
+          .txtstyle {font-size:16px;}
+    </style>
+</head>
+<body style="background:url('{{ url_for('static', filename='/Images/blue.png') }}'); color:white ">
+<div class="container" align="center">
+
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2">
+
+			
+            <h1 class="mt-5">Employee Attendance System </h1>
+            <h2>by Aman Patel</h2>
+			<form method="post" action="{{ url_for('tasks') }}">
+			
+			
+		
+			<input style="width:100px;height:50px; font-size:14px" type="submit" value="Check In" name="checkin" />&nbsp;&nbsp;&nbsp;
+			<input style="width:100px;height:50px; font-size:14px" type="submit" value="Check Out" name="checkout" />
+			<br/>
+			<input style="width:100px;height:50px; font-size:14px;visibility:hidden" type="submit" value="Stop/Start" name="stop"/>
+			<input style="width:100px;height:50px; font-size:14px;visibility:hidden" type="submit" value="Capture" name="click"/>			
+			
+			<br/>
+			
+            <div style="display: inline-block; text-align: left; width:250px">    
+    			
+			Name : <label id="lblname" class="txtstyle" for="Name">{{INPUT_NAME_1}}</label><br/><br/>
+			Check In : <label id="lblcheckin" class="txtstyle"  for="Check In">{{CHKIN_TIME}}</label><br/><br/>
+			Check Out : <label id="lblcheckout" class="txtstyle" for="Check Out">{{CHKOUT_TIME}}</label><br/>
+    		<br/>
+    		Total Time : <label id="lblTotalTime" class="txtstyle" for="Total Time">{{TOT_TIME}}</label><br/>
+    		</div>
+			
+			<br><br>
+			
+			
+			</form>
+            <img src="{{ url_for('video_feed') }}" >
+			<h3 style="font-family:courier;">Instructions:</h3>
+				
+					
+			<div style="display: inline-block; text-align: left;">    			
+    			<li>Check In - Records the name and check in time</li> 
+    			<li>Check Out - Records the name and check out time</li> 
+    		
+    		</div>
+				
+			
+        </div>
+    </div>
+</div>
+</body>
